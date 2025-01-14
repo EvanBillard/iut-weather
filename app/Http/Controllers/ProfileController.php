@@ -57,4 +57,21 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    /**
+ * Update the email notification preference.
+ */
+public function updateEmailNotifications(Request $request): RedirectResponse
+{
+    $user = $request->user();
+
+    // Inverse l'état actuel de la notification
+    $user->email_notifications_enabled = !$user->email_notifications_enabled;
+    $user->save();
+
+    return Redirect::back()->with('status', 'email-notifications-updated');
 }
+
+
+}
+

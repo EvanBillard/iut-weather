@@ -19,12 +19,4 @@ class Kernel extends ConsoleKernel
         require base_path('routes/console.php');
     }
 
-    /**
-     * Define the application's command schedule.
-     */
-    protected function schedule(Schedule $schedule): void
-    {
-        // Exemple de planification d'une commande
-        $schedule->command('send:weather-forecast')->dailyAt('06:00');
-    }
 }

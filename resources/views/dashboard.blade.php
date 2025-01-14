@@ -94,4 +94,13 @@
         @endforeach
     </ul>
 
+    <h2>Email Notifications</h2>
+<form method="POST" action="{{ route('toggle.email.notifications') }}">
+    @csrf
+    <button type="submit" style="background-color: {{ Auth::user()->email_notifications_enabled ? 'rgb(234, 87, 87)' : 'rgb(10, 199, 79)' }}; color: white; border-radius: 5px; border: 2px solid black; cursor: pointer;">
+        {{ Auth::user()->email_notifications_enabled ? 'Disable Email Notifications' : 'Enable Email Notifications' }}
+    </button>
+</form>
+
+
 </x-app-layout>
