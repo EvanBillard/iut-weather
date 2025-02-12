@@ -12,10 +12,9 @@ class Kernel extends ConsoleKernel
      */
     protected function commands(): void
     {
-        // Charge toutes les commandes du dossier Commands
+       
         $this->load(__DIR__.'/Commands');
 
-        // Inclure d'autres fichiers de commandes si nécessaire
         require base_path('routes/console.php');
     }
 

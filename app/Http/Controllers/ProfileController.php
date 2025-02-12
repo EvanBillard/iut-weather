@@ -65,7 +65,7 @@ public function updateEmailNotifications(Request $request): RedirectResponse
 {
     $user = $request->user();
 
-    // Inverse l'état actuel de la notification
+  
     $user->email_notifications_enabled = !$user->email_notifications_enabled;
     $user->save();
 
